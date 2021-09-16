@@ -1,0 +1,55 @@
+<launch>
+
+    <!-- <arg name="point" default="/inliers"/> -->
+    <arg name="point" default="/octomap_point_cloud_centers"/>
+    <!-- <arg name="point" default="/stored_points"/> -->
+
+
+  <!-- <node pkg="msca3dp"
+      name="saveCloud"
+      type="saveCloud"
+      respawn="false"
+      output="screen"
+      cwd="node"
+      args="$(arg point)">
+  </node> -->
+  
+  <arg name="file" default="nmodel.pcd"/>
+  <!-- <arg name="file" default="ndtmodel.pcd"/> -->
+
+  <node pkg="msca3dp"
+      name="visualCloud"
+      type="visualCloud"
+      respawn="false"
+      output="screen"
+      cwd="node"
+      args="$(arg file)">
+  </node>
+
+
+    <!-- <node pkg="msca3dp"
+      name="pc_pub"
+      type="pc_pub"
+      respawn="false"
+      output="screen"
+      cwd="node"
+      args="$(arg file)">
+  </node> -->
+
+    
+  <!-- <node pkg="msca3dp"
+      name="change_detection"
+      type="change_detection"
+      respawn="false"
+      output="screen"
+      cwd="node"
+      args="$(arg point)">
+      <param name="pcdfilename" value="$(arg file)" />
+      <param name="enableprint" value="True" />
+      <param name="printfile" value="CD.csv" />
+  </node> -->
+
+
+
+  
+</launch>

@@ -1,0 +1,30 @@
+<launch>
+
+   <!-- <node name="camera_pose" pkg="tf2_ros" type="static_transform_publisher" 
+    args="0.0 0.0 0.3 0.0 1.5707 0.0 world base_link" /> -->
+
+    <arg name="model" default="$(find msca3dp)/urdf/test_l515_camera.urdf.xacro"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+      <param name="publish_frequency" type="double" value="30.0" />
+    </node>
+
+    <!-- this will include the launch file for gazebo given the model -->  
+    <include file="$(find msca3dp)/launch/gazebo_l515.launch">
+      <arg name="model" value="$(arg model)" />
+    </include>
+
+    <arg name="gui" default="True" />
+    <param name="use_gui" value="$(arg gui)" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find msca3dp)/rviz/withgazebo.rviz" required="true" />
+
+     <arg name="points_topic" default="/camera/depth/color/points" />
+    <node pkg="msca3dp"
+        name="plane_segment"
+        type="plane_segment"
+        respawn="false"
+        output="screen"
+        cwd="node"
+        args="$(arg points_topic)">
+    </node>
+</launch>

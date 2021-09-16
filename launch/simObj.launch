@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Launches object spawner node -->
+<!-- Requires a running Gazebo simulation -->
+
+<launch>
+
+  <!-- Initial cam setting -->
+  <arg name="init_x" default="0.0"/>
+  <arg name="init_y" default="0.0"/>
+  <arg name="init_z" default="0.3"/>
+
+  <arg name="trav_x" default="0.04"/>
+  <arg name="trav_y" default="0.04"/>
+  <arg name="traj_pattern" default="True"/>
+  <!-- <arg name="traj_pattern" default="False"/> -->
+
+  <arg name="cam_speed" default="0.0005"/>
+  <!-- <arg name="enable_noise" default="True"/> -->
+  <arg name="enable_noise" default="False"/>
+  <arg name="std_x" default="0.0001"/>
+  <arg name="std_y" default="0.0001"/>
+  <arg name="std_z" default="0.0002"/>
+
+  <!-- Arguments for object_spawner node with defaults provided -->
+  <arg name="package_name" default="msca3dp"/>
+  <arg name="relative_path" default="/models/sampleBox"/>
+  <arg name="modelsize" default="0.01"/>
+  <arg name="spawnObj" default="True"/>
+   <!-- <arg name="spawnObj" default="False"/> -->
+
+  <!-- AptilTag -->
+  <arg name="spawnTag" default="True"/>
+  <!-- <arg name="spawnTag" default="False"/> -->
+  <arg name="plane_path" default="/models/pattern/tagbackground"/>
+  <arg name="plane_x" default="0.124"/>
+  <arg name="plane_y" default="0.008"/>
+  
+
+  <node name="camMove" pkg="msca3dp" type="camMove.py" output="screen">
+      <!-- Load node configuration parameters to parameter server -->
+    <param name="init_x" type="double" value="$(arg init_x)"/>
+    <param name="init_y" type="double" value="$(arg init_y)"/>
+    <param name="init_z" type="double" value="$(arg init_z)"/>
+
+    <param name="enable_noise" type="bool" value="$(arg enable_noise)"/>
+    <param name="std_x" type="double" value="$(arg std_x)"/>
+    <param name="std_y" type="double" value="$(arg std_y)"/>
+    <param name="std_z" type="double" value="$(arg std_z)"/>
+
+    <param name="trav_x" type="double" value="$(arg trav_x)"/>
+    <param name="trav_y" type="double" value="$(arg trav_y)"/>
+    <param name="traj_pattern" type="bool" value="$(arg traj_pattern)"/>
+    <param name="cam_speed" type="double" value="$(arg cam_speed)"/>
+
+    <param name="package_name" type="string" value="$(arg package_name)"/>
+    <param name="relative_path" type="string" value="$(arg relative_path)"/>
+    <param name="modelsize" type="double" value="$(arg modelsize)"/>
+    <param name="spawnObj" type="bool" value="$(arg spawnObj)"/>
+
+    <param name="spawnTag" type="bool" value="$(arg spawnTag)"/>
+    <param name="plane_path" type="string" value="$(arg plane_path)"/>
+    <param name="plane_x" type="double" value="$(arg plane_x)"/>
+    <param name="plane_y" type="double" value="$(arg plane_y)"/>
+  </node>
+</launch>

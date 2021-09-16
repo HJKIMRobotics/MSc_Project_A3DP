@@ -1,0 +1,17 @@
+<launch>
+  
+  <arg name="file" default="nmodel.pcd"/>
+  <!-- <arg name="file" default="ndtmodel.pcd"/> -->
+  
+  <node pkg="msca3dp"
+      name="change_detection"
+      type="change_detection"
+      respawn="false"
+      output="screen"
+      cwd="node"
+      args="$(arg point)">
+      <param name="pcdfilename" value="$(arg file)" />
+      <param name="enableprint" value="True" />
+      <param name="printfile" value="CD.csv" />
+  </node>
+</launch>

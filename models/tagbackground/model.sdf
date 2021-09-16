@@ -1,0 +1,180 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='tagbackground'>
+    <model name='Apriltag36_11_00000'>
+      <link name='main'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <visual name='main_Visual'>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.0001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Apriltag36_11_00000/materials/scripts</uri>
+              <uri>model://Apriltag36_11_00000/materials/textures</uri>
+              <name>Apriltag36_11_00000</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.099357 -0.040128 0 0 -0 0</pose>
+    </model>
+    <model name='Apriltag36_11_00001'>
+      <link name='main'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <visual name='main_Visual'>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.0001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Apriltag36_11_00001/materials/scripts</uri>
+              <uri>model://Apriltag36_11_00001/materials/textures</uri>
+              <name>Apriltag36_11_00001</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <static>1</static>
+      <pose frame=''>-0.04994 0.060191 0 0 -0 0</pose>
+    </model>
+    <model name='Apriltag36_11_00002'>
+      <link name='main'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <visual name='main_Visual'>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.0001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Apriltag36_11_00002/materials/scripts</uri>
+              <uri>model://Apriltag36_11_00002/materials/textures</uri>
+              <name>Apriltag36_11_00002</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <static>1</static>
+      <pose frame=''>-8.7e-05 -0.040128 -0 0 -0 0</pose>
+    </model>
+    <model name='Apriltag36_11_00003'>
+      <link name='main'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <visual name='main_Visual'>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.0001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Apriltag36_11_00003/materials/scripts</uri>
+              <uri>model://Apriltag36_11_00003/materials/textures</uri>
+              <name>Apriltag36_11_00003</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.049958 0.060191 0 0 -0 0</pose>
+    </model>
+    <model name='Apriltag36_11_00004'>
+      <link name='main'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <visual name='main_Visual'>
+          <geometry>
+            <box>
+              <size>0.05 0.05 0.0001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Apriltag36_11_00004/materials/scripts</uri>
+              <uri>model://Apriltag36_11_00004/materials/textures</uri>
+              <name>Apriltag36_11_00004</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <static>1</static>
+      <pose frame=''>0.099425 -0.040128 0 0 -0 0</pose>
+    </model>
+    <joint name='main_JOINT_1' type='fixed'>
+      <parent>Apriltag36_11_00000::main</parent>
+      <child>Apriltag36_11_00001::main</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='main_JOINT_2' type='fixed'>
+      <parent>Apriltag36_11_00000::main</parent>
+      <child>Apriltag36_11_00002::main</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='main_JOINT_3' type='fixed'>
+      <parent>Apriltag36_11_00000::main</parent>
+      <child>Apriltag36_11_00003::main</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <joint name='main_JOINT_4' type='fixed'>
+      <parent>Apriltag36_11_00000::main</parent>
+      <child>Apriltag36_11_00004::main</child>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    <static>1</static>
+    <allow_auto_disable>1</allow_auto_disable>
+  </model>
+</sdf>

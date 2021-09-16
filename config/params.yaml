@@ -1,0 +1,6 @@
+name: msca3dp
+
+### Sample settings ##################################################
+frame_params:
+  world_frame: "world_frame"
+  robot_frame: "robot_frame"
