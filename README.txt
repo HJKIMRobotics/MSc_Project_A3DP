@@ -1,4 +1,4 @@
-# Project title: Machine-Material Feedback for Autonomous Adaptive 3D Printing
+Project title: Machine-Material Feedback for Autonomous Adaptive 3D Printing
 Author: Ka Kei Choi and Hyungjoo Kim
 Supervisor and advisor: Prof. Simon Julier and PhD. Julis Sustarevas
 Project description: 
